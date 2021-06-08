@@ -1,36 +1,38 @@
-import { ColorSchemeName, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width:'100%',
-    justifyContent:'space-around',
-    padding:10
-
+    width: "100%",
+    justifyContent: 'space-between',
+    padding: 10,
   },
-  leftContainer: {
+  lefContainer: {
     flexDirection: 'row',
+    width:'80%'
+  },
+  midContainer: {
+    justifyContent: 'space-around'
   },
   avatar: {
     width: 60,
     height: 60,
-    // marginRight:,
-    borderRadius:50
+    borderRadius: 50,
+    marginRight: 15,
   },
-  midContainer:{
-    justifyContent:'space-evenly',
+  username: {
+    fontWeight: 'bold',
+    fontSize: 16,
   },
-  username:{
-      fontWeight: "bold",
-      fontSize:16
+  lastMessage: {
+    fontSize: 16,
+    color: 'grey',
+    width:'100%'
   },
-  lastMessage:{
-      fontSize:16,
-      color: "grey"
+  time: {
+    fontSize: 14,
+    color: 'grey',
   },
-  time:{
-    fontSize:16,
-    color: "grey"
-  }
-})
+});
 
-export default styles
+export default styles;

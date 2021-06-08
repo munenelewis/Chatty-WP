@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Text, View } from "../components/Themed";
+import { FlatList, Text, View } from "react-native";
 
 import ChatListItem from "../components/ChatListItem";
 import EditScreenInfo from "../components/EditScreenInfo";
@@ -10,7 +10,13 @@ import chatRooms from "../data/ChatRooms";
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <ChatListItem chatRoom={chatRooms[0]} />
+      <FlatList
+        style={{ width: "100%" }}
+        data={chatRooms}
+        renderItem={({ item }) => (
+          <ChatListItem chatRoom={item} keyExtractor={(item: any) => item.id} />
+        )}
+      />
     </View>
   );
 }
