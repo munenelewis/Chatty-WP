@@ -9,8 +9,8 @@ import { Fontisto, Ionicons } from "@expo/vector-icons";
 import { MainTabParamList, TabOneParamList, TabTwoParamList } from "../types";
 
 import Colors from "../constants/Colors";
-import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import chatScreen from "../screens/ChatScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -49,7 +49,7 @@ export default function BottomTabNavigator() {
           tabBarLabel: () => null,
         }}
       />
-      <MainTab.Screen name="Chats" component={TabTwoNavigator} />
+      <MainTab.Screen name="Chats" component={chatScreen} />
       <MainTab.Screen name="Status" component={TabTwoNavigator} />
       <MainTab.Screen name="Calls" component={TabTwoNavigator} />
     </MainTab.Navigator>
@@ -74,7 +74,7 @@ function TabOneNavigator() {
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="TabOneScreen"
-        component={TabOneScreen}
+        component={chatScreen}
         options={{ headerTitle: "Tab One Title" }}
       />
     </TabOneStack.Navigator>
