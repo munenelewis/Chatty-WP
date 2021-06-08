@@ -11,14 +11,20 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from "@react-navigation/native";
-import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
+import {
+  FontAwesome5,
+  MaterialCommunityIcons,
+  MaterialIcons,
+  Octicons,
+} from "@expo/vector-icons";
+import { Text, View } from "react-native";
 
 import BottomTabNavigator from "./MainTabNavigator";
+import ChatRoomScreen from "../screens/ChatRoom";
 import Colors from "../constants/Colors";
 import LinkingConfiguration from "./LinkingConfiguration";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
-import { View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 Colors;
@@ -55,7 +61,6 @@ function RootNavigator() {
         headerTitleStyle: {
           fontWeight: "bold",
         },
-
       }}
     >
       <Stack.Screen
@@ -80,6 +85,26 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
       />
+
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          title: route.params.name,
+          headerRight: () => (
+            <View style={styles.chatRoomRightIcons}>
+              <FontAwesome5 name="video" size={22} color={"white"} />
+
+              <MaterialIcons name="call" size={22} color={"white"} />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={22}
+                color={"white"}
+              />
+            </View>
+          ),
+        })}
+      />
     </Stack.Navigator>
   );
 }
@@ -88,6 +113,12 @@ const styles = StyleSheet.create({
   headerTopRightIcons: {
     flexDirection: "row",
     width: 60,
+    justifyContent: "space-between",
+    marginRight: 10,
+  },
+  chatRoomRightIcons: {
+    flexDirection: "row",
+    width: 100,
     justifyContent: "space-between",
     marginRight: 10,
   },
