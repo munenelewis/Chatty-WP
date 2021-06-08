@@ -22,6 +22,7 @@ import { Text, View } from "react-native";
 import BottomTabNavigator from "./MainTabNavigator";
 import ChatRoomScreen from "../screens/ChatRoom";
 import Colors from "../constants/Colors";
+import ContactsScreen from "../screens/ContactsScreen";
 import LinkingConfiguration from "./LinkingConfiguration";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
@@ -105,6 +106,7 @@ function RootNavigator() {
           ),
         })}
       />
+      <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
     </Stack.Navigator>
   );
 }
