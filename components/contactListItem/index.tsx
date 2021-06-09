@@ -32,7 +32,7 @@ const ContactListItem = (props: ContactListItemPropsProps) => {
           <View style={styles.midContainer}>
             <Text style={styles.username}>{user.name}</Text>
             <Text numberOfLines={2} style={styles.status}>
-              {user.status}
+              {user.status ? user.status : "Hey there am using Chatty"}
             </Text>
           </View>
         </View>
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
   },
-  status:{
+  status: {
     fontWeight: "200",
     fontSize: 16,
-  }
+  },
 });
