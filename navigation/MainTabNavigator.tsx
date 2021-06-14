@@ -8,6 +8,8 @@ import * as React from "react";
 import { Fontisto, Ionicons } from "@expo/vector-icons";
 import { MainTabParamList, TabOneParamList, TabTwoParamList } from "../types";
 
+import CameraScreen from "../screens/CameraScreen";
+// import CameraScreen from "../screens/CameraScreen"
 import Colors from "../constants/Colors";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import chatScreen from "../screens/ChatScreen";
@@ -41,7 +43,7 @@ export default function BottomTabNavigator() {
     >
       <MainTab.Screen
         name="Camera"
-        component={TabOneNavigator}
+        component={CameraScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Fontisto name="camera" color={color} size={18} />
@@ -52,6 +54,8 @@ export default function BottomTabNavigator() {
       <MainTab.Screen name="Chats" component={chatScreen} />
       <MainTab.Screen name="Status" component={TabTwoNavigator} />
       <MainTab.Screen name="Calls" component={TabTwoNavigator} />
+      {/* <MainTab.Screen name="Camera" component={CameraScreen} /> */}
+      
     </MainTab.Navigator>
   );
 }

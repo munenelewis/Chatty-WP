@@ -27,9 +27,14 @@ export type TabTwoParamList = {
 
 export type User = {
   id: string;
-  name: string;
-  imageUri: string;
+  imageUri?: string;
   status?: string;
+  contactType?: string;
+  firstName?: string;
+  imageAvailable?: boolean;
+  lastName?: string;
+  lookupKey?: string;
+  name?: string;
 };
 
 export type Message = {

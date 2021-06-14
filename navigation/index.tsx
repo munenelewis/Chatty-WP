@@ -106,7 +106,23 @@ function RootNavigator() {
           ),
         })}
       />
-      <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
+      <Stack.Screen
+        name="ContactsScreen"
+        component={ContactsScreen}
+        options={{
+          title: "Select Contacts",
+          headerRight: () => (
+            <View style={styles.headerTopRightIcons}>
+              <Octicons name="search" size={22} color={"white"} />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={22}
+                color={"white"}
+              />
+            </View>
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 }

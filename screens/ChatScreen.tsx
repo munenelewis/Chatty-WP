@@ -1,6 +1,5 @@
-import * as React from "react";
-
 import { FlatList, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
 
 import ChatListItem from "../components/ChatListItem";
 import EditScreenInfo from "../components/EditScreenInfo";

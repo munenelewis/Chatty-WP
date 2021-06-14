@@ -19,6 +19,9 @@ export type ContactListItemPropsProps = {
 const ContactListItem = (props: ContactListItemPropsProps) => {
   const { user } = props;
 
+  console.log("====================================");
+  console.log(user, "fsdfdsfsdf");
+  console.log("====================================");
   const navigation = useNavigation();
 
   const onClick = () => {};
@@ -27,10 +30,19 @@ const ContactListItem = (props: ContactListItemPropsProps) => {
     <TouchableWithoutFeedback onPress={onClick}>
       <View style={styles.container}>
         <View style={styles.lefContainer}>
-          <Image source={{ uri: user.imageUri }} style={styles.avatar} />
+          {user.imageAvailable ? (
+            <Image source={{ uri: user.imageUri }} style={styles.avatar} />
+          ) : (
+            <Image
+              source={{
+                uri: "https://p.kindpng.com/picc/s/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png",
+              }}
+              style={styles.avatar}
+            />
+          )}
 
           <View style={styles.midContainer}>
-            <Text style={styles.username}>{user.name}</Text>
+            <Text style={styles.username}>{user.name ? user.name : user.firstName || user.lastName}</Text>
             <Text numberOfLines={2} style={styles.status}>
               {user.status ? user.status : "Hey there am using Chatty"}
             </Text>
